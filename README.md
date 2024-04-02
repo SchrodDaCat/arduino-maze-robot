@@ -56,11 +56,10 @@ void loop()
     delay(1200);
     left = 0.006783 * readUltrasonicDistance(4, 5);
     
-    if (right < left)
-    {
-      
-      Serial.println("turning left");
-      digitalWrite(dirA, LOW);
+  if (right < left)
+    {  
+    Serial.println("turning left");
+    digitalWrite(dirA, LOW);
       digitalWrite(dirB, HIGH);
       analogWrite(pwmA, 200);
       analogWrite(pwmB, 230);
@@ -74,7 +73,7 @@ void loop()
       analogWrite(pwmA, 200);
       analogWrite(pwmB, 230);
       object = false;
-    }
+  }
     
   }
   else if (object != true)
